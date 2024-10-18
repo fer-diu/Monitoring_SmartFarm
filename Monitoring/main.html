@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="style.css" />
+    <title>Smart Farm Dashboard</title>
+  </head>
+  <body>
+
+    <div id="preloader">
+      <video id="intro-video" width="100%" autoplay muted>
+          <source src="../image/Red White and Yellow Modern Gaming Initials Youtube Channel Logo.mp4" type="video/mp4">
+      </video>
+  </div>
+
+  <!-- Main Content -->
+  <div id="main-content" style="display: none;">
+      
+    <div class="container">
+      <header>
+        <div class="logo">
+          <img src="../image/LadangKu_Logo.png" alt="Farm Icon" />
+          <h1>LadangKu</h1>
+        </div>
+        <nav class="navbar">
+          <a href="#">Profil</a>
+          <a href="#">Data Sensor</a>
+          <a href="#">Analsis</a>
+          <a href="#">Notifikasi</a>
+          <a href="#">Bantuan</a>
+        </nav>
+      </header>
+
+      <main>
+        <aside>
+          <h2>Menu</h2>
+          <ul>
+            <li><a href="#">Beranda</a></li>
+            <li><a href="#">Pengaturan</a></li>
+          </ul>
+        </aside>
+
+        <section class="content">
+          <div class="sensor-data">
+            <h2>Sensor Monitoring</h2>
+            <div class="grid">
+              <div class="card">
+                <img src="../image/Wind.png" alt="">
+                <h3>Kecepatan Angin</h3>
+                <p>12 km/h</p>
+              </div>
+              <div class="card">
+                <img src="../image/Relative Humidity.png" alt="kelembapan udara">
+                <h3>Kelembapan Udara</h3>
+                <p>75%</p>
+              </div>
+              <div class="card">
+                <img src="../image/Intensity.png" alt="">
+                <h3>Intensitas Cahaya</h3>
+                <p>850 W/m²</p>
+              </div>
+              <div class="card">
+                <img src="../image/Christmas Air Temperature.png" alt="">
+                <h3>Suhu Udara</h3>
+                <p>28°C</p>
+              </div>
+              <div class="card">
+                <img src="../image/temperature-check.png" alt="">
+                <h3>Suhu Tanah</h3>
+                <p>24°C</p>
+              </div>
+              <div class="card">
+                <img src="../image/Soil Moisture.png" alt="">
+                <h3>Kelembapan Tanah</h3>
+                <p>60%</p>
+              </div>
+              <div class="card">
+                <img src="../image/Ph.png" alt="Ph_tanah" class="Ph">
+                <h3>pH Tanah</h3>
+                <p>6.5</p>
+              </div>
+              <div class="card">
+                <img src="../image/raining.png" alt="">
+                <h3>Curah Hujan</h3>
+                <p>15 mm</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="irrigation-status">
+            <h2>Status Irigasi</h2>
+            <p>Aktif - Debit Air: 10 m³/h</p>
+            <div class="switch">
+              <input type="checkbox" id="irrigationSwitch" onclick="toggleIrrigation()" />
+              <label for="irrigationSwitch" class="slider">
+                <span class="on-text"></span>
+                <span class="off-text"></span>
+              </label>
+            </div>
+          </div>
+
+
+          <div class="farm-photo">
+            <h2>Foto Lahan</h2>
+            <img src="../image/rice-7252961_1280.jpg" alt="Farm Land" />
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="app.js"></script>
+  </div>
+
+  <script>
+      // Hide preloader after 4 seconds or when the video ends
+      const preloader = document.getElementById('preloader');
+      const mainContent = document.getElementById('main-content');
+      const introVideo = document.getElementById('intro-video');
+
+      introVideo.onended = function() {
+          preloader.style.display = 'none';
+          mainContent.style.display = 'block';
+      };
+
+      setTimeout(function() {
+          preloader.style.display = 'none';
+          mainContent.style.display = 'block';
+      }, 4000);
+  </script>
+  
+  </body>
+</html>

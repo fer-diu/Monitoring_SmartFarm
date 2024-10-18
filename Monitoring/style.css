@@ -1,0 +1,277 @@
+#preloader {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 30%;
+    height: auto;
+    transform: translate(-50%, -50%);
+    background-color: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+/* Container */
+.container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    background-color: #e8f5e9;
+    font-family: Arial, sans-serif;
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    /* background-color: #388e3c; */
+    background: linear-gradient(180deg, #388e3c, #a5d6a7);
+    color: #fff;
+}
+
+header .logo {
+    display: flex;
+    align-items: center;
+}
+
+header .logo img {
+    margin-right: 10px;
+    height: 90px;
+    width: 90px
+}
+
+header nav a {
+    margin: 0 15px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 0.5rem;
+}
+
+.navbar a {
+    color: #fff;
+    display: inline-block;
+    position: relative;
+    text-decoration: none;
+}
+
+.navbar a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 100%;
+    height: 2px;
+    background-color: #f7e600;
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform 0.3s linear;
+}
+
+.navbar a:hover::after {
+    transform: scaleX(1);
+}
+
+
+/* Main Layout */
+main {
+    display: flex;
+    flex: 1;
+}
+
+aside {
+    width: 20%;
+    background-color: #a5d6a7;
+    padding: 1rem;
+}
+
+aside h2 {
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+    color: #2e7d32;
+}
+
+aside ul {
+    list-style: none;
+    padding: 0;
+}
+
+aside ul li {
+    margin-bottom: 1rem;
+}
+
+aside ul li a {
+    text-decoration: none;
+    color: #1b5e20;
+    font-weight: bold;
+}
+
+aside ul li a:hover {
+    color: #4caf50;
+}
+
+/* Content */
+.content {
+    width: 80%;
+    padding: 1.5rem;
+    background-color: #ffffff;
+}
+
+.sensor-data {
+    margin-bottom: 2rem;
+}
+
+.sensor-data h2 {
+    color: #2e7d32;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+}
+
+.card {
+    background-color: #f1f8e9;
+    padding: 1rem;
+    border: 2px solid #4caf50;
+    border-radius: 10px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.card img {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 10px;
+}
+
+.Ph {
+    position: relative;
+    transform: translateY(0px);
+    height: 120%;
+}
+
+
+.card h3 {
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+    color: #1b5e20;
+}
+
+.irrigation-status {
+    margin-bottom: 2rem;
+}
+
+.irrigation-status h2 {
+    color: #2e7d32;
+}
+
+.irrigation-status p {
+    font-size: 1.2rem;
+    color: #388e3c;
+}
+
+/* Irigation Switch */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 34px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+input:checked+.slider {
+    background-color: #4CAF50;
+    /* Warna hijau saat aktif */
+}
+
+input:checked+.slider:before {
+    transform: translateX(26px);
+}
+
+input:checked+.slider .on-text {
+    opacity: 1;
+}
+
+input:checked+.slider .off-text {
+    opacity: 0;
+}
+
+/* Hover menampilkan tooltip "Hidupkan" */
+.slider:hover::after {
+    content: "Hidupkan";
+    position: absolute;
+    top: -25px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #333;
+    color: #fff;
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 12px;
+    white-space: nowrap;
+}
+
+p {
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+
+.farm-photo {
+    text-align: center;
+}
+
+.farm-photo img {
+    max-width: 100%;
+    border-radius: 10px;
+    border: 2px solid #4caf50;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: #388e3c;
+    color: #fff;
+}
+
+footer p {
+    margin: 0;
+}
